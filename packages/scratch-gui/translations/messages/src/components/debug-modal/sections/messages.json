@@ -1,0 +1,257 @@
+[
+  {
+    "id": "gui.debugModal.readAloud.title",
+    "description": "title for the \"read aloud\" section",
+    "defaultMessage": "Read Aloud"
+  },
+  {
+    "id": "gui.debugModal.readAloud.description1",
+    "description": "description for the \"read aloud\" section of the debug modal",
+    "defaultMessage": "As you read your code aloud, think from the computer’s perspective."
+  },
+  {
+    "id": "gui.debugModal.readAloud.description2",
+    "description": "description for the \"read aloud\" section of the debug modal",
+    "defaultMessage": "Are you including steps that aren’t there?"
+  },
+  {
+    "id": "gui.debugModal.readAloud.description3",
+    "description": "description for the \"read aloud\" section of the debug modal",
+    "defaultMessage": "Are your instructions clear?"
+  },
+  {
+    "id": "gui.debugModal.readAloud.description4",
+    "description": "description for the \"read aloud\" section of the debug modal",
+    "defaultMessage": "If something needs to be reset each time the program has run, are those instructions included?"
+  },
+  {
+    "id": "gui.debugModal.breakItDown.title",
+    "description": "title for the \"break it down\" section",
+    "defaultMessage": "Break It Down"
+  },
+  {
+    "id": "gui.debugModal.breakItDown.description1",
+    "description": "description for the \"break it down\" section of the debug modal",
+    "defaultMessage": "Separate the blocks into smaller chunks (or sequences), and click to see what each sequence does."
+  },
+  {
+    "id": "gui.debugModal.breakItDown.description2",
+    "description": "description for the \"break it down\" section of the debug modal",
+    "defaultMessage": "Once the smaller sequences work as you expect, add them back into the main program."
+  },
+  {
+    "id": "gui.debugModal.breakItDown.description3",
+    "description": "description for the \"break it down\" section of the debug modal",
+    "defaultMessage": "The process is called decomposition."
+  },
+  {
+    "id": "gui.debugModal.slowItDown.title",
+    "description": "title for the \"slow it down\" section",
+    "defaultMessage": "Slow It Down"
+  },
+  {
+    "id": "gui.debugModal.slowItDown.description1",
+    "description": "description for the \"slow it down\" section of the debug modal",
+    "defaultMessage": "The computer runs your program so quickly it can be hard to follow with your eyes."
+  },
+  {
+    "id": "gui.debugModal.slowItDown.description2",
+    "description": "description for the \"slow it down\" section of the debug modal",
+    "defaultMessage": "Add temporary “wait” or “wait until” blocks to slow down the sequence. This gives you time to process if a piece worked or not."
+  },
+  {
+    "id": "gui.debugModal.slowItDown.description3",
+    "description": "description for the \"slow it down\" section of the debug modal",
+    "defaultMessage": "Remove these wait blocks once your code works."
+  },
+  {
+    "id": "gui.debugModal.addSoundCheckpoints.title",
+    "description": "title for the \"add sound checkpoints\" section",
+    "defaultMessage": "Add Sound Checkpoints"
+  },
+  {
+    "id": "gui.debugModal.addSoundCheckpoints.description1",
+    "description": "description for the \"add sound checkpoints\" section of the debug modal",
+    "defaultMessage": "Similar to the Slow It Down strategy, you can add different sounds with the “play until done” block at key points to test your sequence."
+  },
+  {
+    "id": "gui.debugModal.addSoundCheckpoints.description2",
+    "description": "description for the \"add sound checkpoints\" section of the debug modal",
+    "defaultMessage": "If a sound doesn’t play, your bug may be before this block. If the sound plays, the bug is probably after this block."
+  },
+  {
+    "id": "gui.debugModal.addSoundCheckpoints.description3",
+    "description": "description for the \"add sound checkpoints\" section of the debug modal",
+    "defaultMessage": "Remove the sounds once your code works."
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.title",
+    "description": "title for the \"tinker with block order\" section",
+    "defaultMessage": "Tinker with Block Order"
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.description1",
+    "description": "description for the \"tinker with block order\" section of the debug modal",
+    "defaultMessage": "Try adjusting the order/sequence of the blocks."
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.description2",
+    "description": "description for the \"tinker with block order\" section of the debug modal",
+    "defaultMessage": "What needs to happen first?"
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.description3",
+    "description": "description for the \"tinker with block order\" section of the debug modal",
+    "defaultMessage": "What happens second?"
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.description4",
+    "description": "description for the \"tinker with block order\" section of the debug modal",
+    "defaultMessage": "Do values or sprites need to reset before the next piece of code runs?"
+  },
+  {
+    "id": "gui.debugModal.tinkerWithBlockOrder.description5",
+    "description": "description for the \"tinker with block order\" section of the debug modal",
+    "defaultMessage": "Try using blocks inside a loop or conditional statement, versus outside a loop or conditional statement."
+  },
+  {
+    "id": "gui.debugModal.toLoopOrNot.title",
+    "description": "title for the \"tinker with block order\" section",
+    "defaultMessage": "To Loop or Not to Loop"
+  },
+  {
+    "id": "gui.debugModal.toLoopOrNot.description1",
+    "description": "description for the \"to loop or not to loop\" section of the debug modal",
+    "defaultMessage": "If using Control blocks like \"forever\" and \"repeat\", check that all blocks inside a loop should be there, or if a block (like “wait”) is missing to reset the action or adjust the timing. Do you want your loop to run forever or for a certain number of times? Should something stop the looping?"
+  },
+  {
+    "id": "gui.debugModal.toLoopOrNot.description2",
+    "description": "description for the \"to loop or not to loop\" section of the debug modal",
+    "defaultMessage": "Perhaps you aren't using a loop when you should be? For instance, if you are using a conditional statement block like \"if then,\" does the program only need to check if it is true or false once? Or does it need to check continuously, in which case, you would want to place your conditional statement inside a forever loop?"
+  },
+  {
+    "id": "gui.debugModal.timingAndParallelism.title",
+    "description": "title for the \"think about timing and parallelism\" section",
+    "defaultMessage": "Think About Timing & Parallelism"
+  },
+  {
+    "id": "gui.debugModal.timingAndParallelism.sectionTitle",
+    "description": "title for the \"think about timing and parallelism\" sidebar section",
+    "defaultMessage": "Timing & Parallelism"
+  },
+  {
+    "id": "gui.debugModal.timingAndParallelism.description1",
+    "description": "description for the \"think about timing and parallelism\" section of the debug modal",
+    "defaultMessage": "Do you have multiple events trying to run at the same time? If two sequences are programmed to start at the same time, you can get unpredictable behavior."
+  },
+  {
+    "id": "gui.debugModal.timingAndParallelism.description2",
+    "description": "description for the \"think about timing and parallelism\" section of the debug modal",
+    "defaultMessage": "Add small waits, broadcasts, or user interaction (like clicking or pressing a key) to see if this affects the result."
+  },
+  {
+    "id": "gui.debugModal.thinkAboutBlockOptions.title",
+    "description": "title for the \"think about block options\" section",
+    "defaultMessage": "Think About Block Options"
+  },
+  {
+    "id": "gui.debugModal.thinkAboutBlockOptions.description1",
+    "description": "description for the \"think about block options\" section of the debug modal",
+    "defaultMessage": "Is there a similar but different block you can use?"
+  },
+  {
+    "id": "gui.debugModal.thinkAboutBlockOptions.description2",
+    "description": "description for the \"think about block options\" section of the debug modal",
+    "defaultMessage": "Some blocks look similar but can behave differently, such as “set” vs “change” or “play until done” vs “start.”"
+  },
+  {
+    "id": "gui.debugModal.thinkAboutBlockOptions.description3",
+    "description": "description for the \"think about block options\" section of the debug modal",
+    "defaultMessage": "Try using a similar block in place of what you have, and see if this affects the result."
+  },
+  {
+    "id": "gui.debugModal.checkTheValues.title",
+    "description": "title for the \"check the value\" section",
+    "defaultMessage": "Check the Values"
+  },
+  {
+    "id": "gui.debugModal.checkTheValues.description1",
+    "description": "description for the \"check the values\" section of the debug modal",
+    "defaultMessage": "If you are using variables or reporter blocks, check the value at the moment the code sequence is run."
+  },
+  {
+    "id": "gui.debugModal.checkTheValues.description2",
+    "description": "description for the \"check the values\" section of the debug modal",
+    "defaultMessage": "Do/should all the sprites control a variable, or should only one sprite have control?"
+  },
+  {
+    "id": "gui.debugModal.checkTheValues.description3",
+    "description": "description for the \"check the values\" section of the debug modal",
+    "defaultMessage": "Where is the value reset? Where is it changed?"
+  },
+  {
+    "id": "gui.debugModal.checkCodeSequence.title",
+    "description": "title for the \"check code sequence\" section",
+    "defaultMessage": "Check Code Sequence"
+  },
+  {
+    "id": "gui.debugModal.checkCodeSequence.description1",
+    "description": "description for the \"check code sequence\" section of the debug modal",
+    "defaultMessage": "Check that your code sequence is attached to the correct sprite or the backdrop, if appropriate."
+  },
+  {
+    "id": "gui.debugModal.checkCodeSequence.description2",
+    "description": "description for the \"check code sequence\" section of the debug modal",
+    "defaultMessage": "If you need to move your code to another sprite, click and drag it until you are hovering over the correct sprite. Release it once the sprite wiggles."
+  },
+  {
+    "id": "gui.debugModal.checkCodeSequence.description3",
+    "description": "description for the \"check code sequence\" section of the debug modal",
+    "defaultMessage": "You can also use your Backpack (bottom of screen) to store and move your code or assets."
+  },
+  {
+    "id": "gui.debugModal.commentYourCode.title",
+    "description": "title for the \"comment your code\" section",
+    "defaultMessage": "Comment Your Code"
+  },
+  {
+    "id": "gui.debugModal.commentYourCode.description1",
+    "description": "description for the \"comment your code\" section of the debug modal",
+    "defaultMessage": "Adding comments to your code can help others looking at your code to understand it. It can also help you remember how your code works when you come back to it later."
+  },
+  {
+    "id": "gui.debugModal.commentYourCode.description2",
+    "description": "description for the \"comment your code\" section of the debug modal",
+    "defaultMessage": "Right click on script area to “Add Comment.” Use everyday language to explain what a block, or small sequence of blocks, does."
+  },
+  {
+    "id": "gui.debugModal.takeABreak.title",
+    "description": "title for the \"take a break\" section",
+    "defaultMessage": "Take a Break, Step Away"
+  },
+  {
+    "id": "gui.debugModal.takeABreak.description1",
+    "description": "description for the \"take a break, step away\" section of the debug modal",
+    "defaultMessage": "Sometimes, spending too much time focused on an issue can be counterproductive and frustrating."
+  },
+  {
+    "id": "gui.debugModal.takeABreak.description2",
+    "description": "description for the \"take a break, step away\" section of the debug modal",
+    "defaultMessage": "Take a break and step away from the screen to clear your mind. After some rest, focusing on something else, or getting some water, you can approach the problem with fresh eyes."
+  },
+  {
+    "id": "gui.debugModal.askForHelp.title",
+    "description": "title for the \"ask for help\" section",
+    "defaultMessage": "Ask for Help"
+  },
+  {
+    "id": "gui.debugModal.askForHelp.description1",
+    "description": "description for the \"ask for help\" section of the debug modal",
+    "defaultMessage": "If you are still stuck, you can ask for help from a peer. Try finding a debugging/help studio and share your project, asking for help in a comment or the project notes."
+  },
+  {
+    "id": "gui.debugModal.askForHelp.description2",
+    "description": "description for the \"ask for help\" section of the debug modal",
+    "defaultMessage": "Ask one to three people to try your code, as different people may have different perspectives or solutions!"
+  }
+]

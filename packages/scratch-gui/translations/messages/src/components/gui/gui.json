@@ -1,0 +1,77 @@
+[
+  {
+    "id": "gui.aria.menuBar",
+    "description": "ARIA label for the top menu bar",
+    "defaultMessage": "Menu topbar"
+  },
+  {
+    "id": "gui.aria.editor",
+    "description": "ARIA label for the main editor area",
+    "defaultMessage": "Editor"
+  },
+  {
+    "id": "gui.aria.tabList",
+    "description": "ARIA label for the editor tab list",
+    "defaultMessage": "Tab list"
+  },
+  {
+    "id": "gui.aria.codePanel",
+    "description": "ARIA label for the code editor panel",
+    "defaultMessage": "Code editor panel"
+  },
+  {
+    "id": "gui.aria.costumesPanel",
+    "description": "ARIA label for the costumes editor panel",
+    "defaultMessage": "Costumes editor panel"
+  },
+  {
+    "id": "gui.aria.backdropsPanel",
+    "description": "ARIA label for the backdrops editor panel",
+    "defaultMessage": "Backdrops editor panel"
+  },
+  {
+    "id": "gui.aria.soundsPanel",
+    "description": "ARIA label for the sounds editor panel",
+    "defaultMessage": "Sounds editor panel"
+  },
+  {
+    "id": "gui.aria.backpack",
+    "description": "ARIA label for the backpack",
+    "defaultMessage": "Backpack"
+  },
+  {
+    "id": "gui.aria.stageAndTarget",
+    "description": "ARIA label for stage and target area",
+    "defaultMessage": "Stage and target"
+  },
+  {
+    "id": "gui.aria.stage",
+    "description": "ARIA label for the stage",
+    "defaultMessage": "Stage"
+  },
+  {
+    "id": "gui.aria.targetPane",
+    "description": "ARIA label for the target pane",
+    "defaultMessage": "Target pane"
+  },
+  {
+    "id": "gui.gui.codeTab",
+    "description": "Button to get to the code panel",
+    "defaultMessage": "Code"
+  },
+  {
+    "id": "gui.gui.backdropsTab",
+    "description": "Button to get to the backdrops panel",
+    "defaultMessage": "Backdrops"
+  },
+  {
+    "id": "gui.gui.costumesTab",
+    "description": "Button to get to the costumes panel",
+    "defaultMessage": "Costumes"
+  },
+  {
+    "id": "gui.gui.soundsTab",
+    "description": "Button to get to the sounds panel",
+    "defaultMessage": "Sounds"
+  }
+]

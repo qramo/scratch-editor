@@ -1,0 +1,754 @@
+/*!
+   *  decimal.js v10.6.0
+   *  An arbitrary-precision Decimal type for JavaScript.
+   *  https://github.com/MikeMcl/decimal.js
+   *  Copyright (c) 2025 Michael Mclaughlin <M8ch88l@gmail.com>
+   *  MIT Licence
+   */
+
+/*! @license DOMPurify 3.3.1 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.3.1/LICENSE */
+
+/*! @source http://purl.eligrey.com/github/canvas-toBlob.js/blob/master/canvas-toBlob.js */
+
+/*! exports provided: Adler32 */
+
+/*! exports provided: BUFFER_TOO_BIG, ReferenceBE, LargeInt, AsciiString, Bytes, SoundBytes, Bitmap32BE, UTF8, OpaqueColor, TranslucentColor */
+
+/*! exports provided: ByteStream */
+
+/*! exports provided: ByteTakeIterator */
+
+/*! exports provided: CRC32 */
+
+/*! exports provided: DEFLATE_BLOCK_SIZE_MAX, DeflateHeader, DeflateChunkStart, DeflateEnd */
+
+/*! exports provided: DeflateStream */
+
+/*! exports provided: FakeZipFile, FakeZip, toSb2FakeZipApi */
+
+/*! exports provided: Field, value, Value, Header, Reference, BuiltinObjectHeader, FieldObjectHeader */
+
+/*! exports provided: FieldIterator */
+
+/*! exports provided: FieldObject */
+
+/*! exports provided: IS_HOST_LITTLE_ENDIAN, BytePrimitive, Uint8, Uint16BE, Int16BE, Int32BE, Uint32BE, Uint16LE, Uint32LE, DoubleBE, FixedAsciiString */
+
+/*! exports provided: PNGChunkStream */
+
+/*! exports provided: PNGFile */
+
+/*! exports provided: PNGSignature, PNGChunkStart, PNGChunkEnd, PNGIHDRChunkBody, PNGFilterMethodByte */
+
+/*! exports provided: Packet */
+
+/*! exports provided: PointData, RectangleData, ImageData, StageData, SpriteData, TextDetailsData, ImageMediaData, UncompressedData, SoundMediaData, ListWatcherData, AlignmentData, MorphData, StaticStringData, UpdatingStringData, WatcherReadoutFrameData, WATCHER_MODES, WatcherData, FIELD_OBJECT_CONTRUCTORS */
+
+/*! exports provided: ProxyStream */
+
+/*! exports provided: ReferenceFixer */
+
+/*! exports provided: SB1File */
+
+/*! exports provided: SB1File, AssertionError, ValidationError */
+
+/*! exports provided: SB1Signature, SB1Header */
+
+/*! exports provided: SqueakImage */
+
+/*! exports provided: SqueakSound */
+
+/*! exports provided: TYPES, TYPE_NAMES */
+
+/*! exports provided: TypeIterator */
+
+/*! exports provided: WAVESignature, WAVEChunkStart, WAVEFMTChunkBody */
+
+/*! exports provided: WAVFile */
+
+/*! exports provided: assert, AssertionError, ValidationError */
+
+/*! exports provided: toSb2Json */
+
+/*! formdata-polyfill. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
+
+/*! no static exports found */
+
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+/*! ws. MIT License. Einar Otto Stangvik <einaros@gmail.com> */
+
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+
+/*!*************************!*\
+  !*** ./src/sb1-file.js ***!
+  \*************************/
+
+/*!***************************!*\
+  !*** ./src/squeak/ids.js ***!
+  \***************************/
+
+/*!****************************!*\
+  !*** ./src/util/assert.js ***!
+  \****************************/
+
+/*!*****************************!*\
+  !*** ./src/coders/crc32.js ***!
+  \*****************************/
+
+/*!*****************************!*\
+  !*** ./src/squeak/types.js ***!
+  \*****************************/
+
+/*!******************************!*\
+  !*** ./src/squeak/fields.js ***!
+  \******************************/
+
+/*!*******************************!*\
+  !*** ./src/coders/adler32.js ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/coders/png-file.js ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/coders/wav-file.js ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/to-sb2/fake-zip.js ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** external "text-encoding" ***!
+  \********************************/
+
+/*!*********************************!*\
+  !*** ./src/sb1-file-packets.js ***!
+  \*********************************/
+
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/coders/byte-stream.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/coders/png-packets.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/coders/wav-packets.js ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ./src/coders/byte-packets.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/coders/proxy-stream.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/coders/squeak-image.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/coders/squeak-sound.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ./src/squeak/field-object.js ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ./src/squeak/type-iterator.js ***!
+  \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/coders/deflate-stream.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/squeak/field-iterator.js ***!
+  \**************************************/
+
+/*!**************************************!*\
+  !*** ./src/to-sb2/json-generator.js ***!
+  \**************************************/
+
+/*!***************************************!*\
+  !*** ./src/coders/byte-primitives.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/coders/deflate-packets.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/squeak/byte-primitives.js ***!
+  \***************************************/
+
+/*!***************************************!*\
+  !*** ./src/squeak/reference-fixer.js ***!
+  \***************************************/
+
+/*!****************************************!*\
+  !*** (webpack)/buildin/amd-options.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./node_modules/js-md5/src/md5.js ***!
+  \****************************************/
+
+/*!****************************************!*\
+  !*** ./src/coders/png-chunk-stream.js ***!
+  \****************************************/
+
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ./src/squeak/byte-take-iterator.js ***!
+  \******************************************/
+
+/**
+    * @license
+    * Copyright 2024 Google LLC. All Rights Reserved.
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    * http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+    * =============================================================================
+    */
+
+/**
+ * @description Calculate deltaE OK which is the simple root sum of squares
+ * @param {number[]} reference - Array of OKLab values: L as 0..1, a and b as -1..1
+ * @param {number[]} sample - Array of OKLab values: L as 0..1, a and b as -1..1
+ * @return {number} How different a color sample is from reference
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/deltaEOK.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/deltaEOK.js
+ */
+
+/**
+ * @license
+ * Copyright 2017 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2018 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2020 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2020 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2021 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2021 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2022 Google LLC.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2022 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2022 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2023 Google LLC.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license
+ * Copyright 2023 Google LLC. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
+/**
+ * @license MIT https://github.com/facelessuser/coloraide/blob/main/LICENSE.md
+ */
+
+/**
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ *
+ * XYZ <-> LMS matrices recalculated for consistent reference white
+ * @see https://github.com/w3c/csswg-drafts/issues/6642#issuecomment-943521484
+ */
+
+/**
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js
+ */
+
+/**
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * @param {number} hue -  Hue as degrees 0..360
+ * @param {number} white -  Whiteness as percentage 0..100
+ * @param {number} black -  Blackness as percentage 0..100
+ * @return {number[]} Array of RGB components 0..1
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/hwbToRgb.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/hwbToRgb.js
+ */
+
+/**
+ * @param {number} hue - Hue as degrees 0..360
+ * @param {number} sat - Saturation as percentage 0..100
+ * @param {number} light - Lightness as percentage 0..100
+ * @return {number[]} Array of sRGB components; in-gamut colors in range [0..1]
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/hslToRgb.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/hslToRgb.js
+ */
+
+/**
+ * Assuming XYZ is relative to D50, convert to CIE Lab
+ * from CIE standard, which now defines these as a rational fraction
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Bradford chromatic adaptation from D50 to D65
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Bradford chromatic adaptation from D65 to D50
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_ChromAdapt.html
+ */
+
+/**
+ * Character class utilities for XML NS 1.0 edition 3.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
+
+/**
+ * Character classes and associated utilities for the 2nd edition of XML 1.1.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
+
+/**
+ * Character classes and associated utilities for the 5th edition of XML 1.0.
+ *
+ * @author Louis-Dominique Dubeau
+ * @license MIT
+ * @copyright Louis-Dominique Dubeau
+ */
+
+/**
+ * Convert D50 XYZ to linear-light prophoto-rgb
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ */
+
+/**
+ * Convert Lab to D50-adapted XYZ
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ */
+
+/**
+ * Convert XYZ to linear-light P3
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert XYZ to linear-light rec2020
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of a98-rgb values in the range 0.0 - 1.0
+ * to linear light (un-companded) form. Negative values are also now accepted
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of display-p3 RGB values in the range 0.0 - 1.0
+ * to linear light (un-companded) form.
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of gamma-corrected sRGB values in the 0.0 to 1.0 range to HSL.
+ *
+ * @param {Color} RGB [r, g, b]
+ * - Red component 0..1
+ * - Green component 0..1
+ * - Blue component 0..1
+ * @return {number[]} Array of HSL values: Hue as degrees 0..360, Saturation and Lightness as percentages 0..100
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/utilities.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ *
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/better-rgbToHsl.js
+ */
+
+/**
+ * Convert an array of linear-light a98-rgb in the range 0.0-1.0
+ * to gamma corrected form. Negative values are also now accepted
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of linear-light a98-rgb values to CIE XYZ
+ * http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ * has greater numerical precision than section 4.3.5.3 of
+ * https://www.adobe.com/digitalimag/pdfs/AdobeRGB1998.pdf
+ * but the values below were calculated from first principles
+ * from the chromaticity coordinates of R G B W
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ * @see https://www.adobe.com/digitalimag/pdfs/AdobeRGB1998.pdf
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/matrixmaker.html
+ */
+
+/**
+ * Convert an array of linear-light display-p3 RGB in the range 0.0-1.0
+ * to gamma corrected form
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of linear-light display-p3 values to CIE XYZ
+ * using D65 (no chromatic adaptation)
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ */
+
+/**
+ * Convert an array of linear-light prophoto-rgb in the range 0.0-1.0
+ * to gamma corrected form.
+ * Transfer curve is gamma 1.8 with a small linear portion.
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of linear-light prophoto-rgb values to CIE D50 XYZ.
+ * Matrix cannot be expressed in rational form, but is calculated to 64 bit accuracy.
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see see https://github.com/w3c/csswg-drafts/issues/7675
+ */
+
+/**
+ * Convert an array of linear-light rec2020 RGB  in the range 0.0-1.0
+ * to gamma corrected form ITU-R BT.2020-2 p.4
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of linear-light rec2020 values to CIE XYZ
+ * using  D65 (no chromatic adaptation)
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+ */
+
+/**
+ * Convert an array of linear-light sRGB values in the range 0.0-1.0 to gamma corrected form
+ * Extended transfer function:
+ *  For negative values, linear portion extends on reflection
+ *  of axis, then uses reflected pow below that
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://en.wikipedia.org/wiki/SRGB
+ */
+
+/**
+ * Convert an array of linear-light sRGB values to CIE XYZ
+ * using sRGB's own white, D65 (no chromatic adaptation)
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of of sRGB values where in-gamut values are in the range
+ * [0 - 1] to linear light (un-companded) form.
+ * Extended transfer function:
+ *  For negative values, linear portion is extended on reflection of axis,
+ *  then reflected power function is used.
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://en.wikipedia.org/wiki/SRGB
+ */
+
+/**
+ * Convert an array of prophoto-rgb values where in-gamut Colors are in the
+ * range [0.0 - 1.0] to linear light (un-companded) form. Transfer curve is
+ * gamma 1.8 with a small linear portion. Extended transfer function
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Convert an array of rec2020 RGB values in the range 0.0 - 1.0
+ * to linear light (un-companded) form.
+ * ITU-R BT.2020-2 p.4
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ */
+
+/**
+ * Given OKLab, convert to XYZ relative to D65
+ *
+ * @license W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ * @copyright This software or document includes material copied from or derived from https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js. Copyright © 2022 W3C® (MIT, ERCIM, Keio, Beihang).
+ * @see https://github.com/w3c/csswg-drafts/blob/main/css-color-4/conversions.js
+ */
+
+/** @license URI.js v4.4.1 (c) 2011 Gary Court. License: http://github.com/garycourt/uri-js */
